@@ -11,4 +11,8 @@ public class Game {
         player = new Player();
     }
 
+    public Board getBoard() {
+        return board;
+    }
+
 }

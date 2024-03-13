@@ -1,18 +1,24 @@
 package com.example.memorygame.model.memory;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Board {
-    private int difficulty = 1;
+    private int difficulty;
     private List<Card> cards = new ArrayList<>();
 
     public Board() {
+        this.difficulty = 1;
         generateCards(this.getDifficulty()*3+1);
         // 0 = 2 pairs, 1 = 4, 2 = 7, 3 = 10, ...
+        printCards();
     }
 
-    public static boolean sameCard(Card card1, Card card2) {
+    public void shuffle() {
+        Collections.shuffle(this.cards);
+    }
+    public boolean sameCard(Card card1, Card card2) {
         return card1.getValue()==card2.getValue();
     }
     private void generateCards(int pairs) {
@@ -35,12 +41,12 @@ public class Board {
         this.difficulty = difficulty;
     }
 
-    public static void main(String[] args) {
-        Board board = new Board();
-        for (int i = 0; i < board.getCards().size(); i++) {
-            System.out.print("kaart "+i+": ");
-            System.out.println(board.getCards().get(i).getValue());
+
+    public void printCards() {
+        for (int i = 0; i < this.getCards().size(); i++) {
+            System.out.print(this.getCards().get(i).getValue()+" ");
         }
-        System.out.println(sameCard(board.getCards().get(0), board.getCards().get(1)));
     }
+
+
 }

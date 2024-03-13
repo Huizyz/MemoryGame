@@ -3,11 +3,11 @@ package com.example.memorygame.model.memory;
 import javafx.scene.image.Image;
 
 public enum Cards {
-    A(new Image("images/A")),
-    B(new Image("images/B")),
-    C(new Image("images/C")),
-    D(new Image("images/D")),
-    E(new Image("images/E")),
+    A(new Image("C:\\Users\\rayan\\IdeaProjects\\MemoryGameOffline\\MemoryGame-master\\src\\main\\resources\\images\\A.png")),
+    B(new Image("C:\\Users\\rayan\\IdeaProjects\\MemoryGameOffline\\MemoryGame-master\\src\\main\\resources\\images\\B.png")),
+    C(new Image("C:\\Users\\rayan\\IdeaProjects\\MemoryGameOffline\\MemoryGame-master\\src\\main\\resources\\images\\C.png")),
+    D(new Image("C:\\Users\\rayan\\IdeaProjects\\MemoryGameOffline\\MemoryGame-master\\src\\main\\resources\\images\\D.png")),
+    E(new Image("C:\\Users\\rayan\\IdeaProjects\\MemoryGameOffline\\MemoryGame-master\\src\\main\\resources\\images\\E.png")),
     F(new Image("images/F")),
     G(new Image("images/G")),
     H(new Image("images/H")),
@@ -40,7 +40,7 @@ public enum Cards {
         return image;
     }
 
-    public static Image getImageIndex(int index) {
+    public static Image getImageByIndex(int index) {
         if (index >= 0 && index < Cards.values().length) {
             return Cards.values()[index].getImage();
         }
